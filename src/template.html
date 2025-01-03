@@ -1,11 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Weather App</title>
-  </head>
-  <body>
-  
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather App</title>
+</head>
+
+<body>
+  <div id="content">
+    <form class="form form--weather-location js-weather-location-form">
+        <input type="text" name="location" placeholder="location goes here">
+        <button type="submit">Submit search</button>
+      </form>
+      <div class="weather">
+        <div class="weather__conditions">
+         <p class="weather__condition"></p> 
+         <p class="weather__temp"></p> 
+         <p class="weather__feelslike"></p> 
+         <p class="weather__tempmax"></p> 
+         <p class="weather__tempmin"></p> 
+        </div>
+      </div>
+  </div>
+</body>
+
 </html>
