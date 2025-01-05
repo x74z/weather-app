@@ -7,7 +7,7 @@
   <title>Weather App</title>
 </head>
 
-<body>
+<body class="body">
   <div id="content">
     <form class="form form--weather-location js-weather-location-form">
       <input type="text" name="location" placeholder="location goes here" />
@@ -16,34 +16,39 @@
 
     <div class="weather">
       <div class="weather__conditions">
-        <p class="weather__condition js-weather-condition"></p>
+        <h3 class="weather__condition js-weather-condition"></h3>
+          <h4 class="weather__temp js-temp"></h4>
           <img class="js-icon-img">
-        <p class="weather__temp js-temp"></p>
-        <p class="weather__feelslike js-feelslike"></p>
+        <h3 class="weather__feelslike js-feelslike"></h3>
         <p class="weather__tempmax js-tempmax"></p>
         <p class="weather__tempmin js-tempmin"></p>
       </div>
       <div class="weather__precipitation">
-        <h1>Precipitation</h1>
+        <h3>Precipitation</h3>
         <p class="js-precipitation"></p>
       </div>
       <div class="weather__wind-speed">
-        <h1>Wind</h1>
+        <h3>Wind speed</h3>
         <p class="js-wind-speed"></p>
       </div>
       <div class="weather__sunrise-sunset">
-        <h1>Sunrise & Sunset</h1>
+        <h3>Sunrise & Sunset</h3>
         <p class="js-sunrise"></p>
         <p class="js-sunset"></p>
       </div>
       <div class="weather__uvindex">
-        <h1>UV index</h1>
+        <h3>UV index</h3>
         <p class="js-uvindex"></p>
       </div>
       <div class="weather__humidity">
-        <h1>Humidity</h1>
+        <h3>Humidity</h3>
         <p class="js-humidity"></p>
       </div>
+
+        <!-- <!-1- Maybe add one more thing here? -1-> -->
+        <!-- <div class="weather__"> -->
+          
+        <!-- </div> -->
     </div>
 
 
