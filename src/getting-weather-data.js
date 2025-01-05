@@ -26,7 +26,7 @@ export function proccessWeatherDataForDate(data) {
     sunset: data.currentConditions.sunset,
     visibility: data.currentConditions.visibility,
   };
-  console.log(currentData);
+  // console.log(currentData);
   return currentData;
 }
 function formatLocationForUrl(location) {
@@ -42,7 +42,7 @@ export async function getWeatherDataJson(locationInput) {
     const responseData = await fetch( `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=${getE()}&contentType=json`);
     const dataInJson = await responseData.json();
 
-    console.log(dataInJson);
+    // console.log(dataInJson);
     return dataInJson;
 
   } catch (error) {

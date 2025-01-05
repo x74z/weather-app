@@ -49,13 +49,17 @@ export function addDataToDom(processedData) {
   // Humidity block
   const humidity = document.querySelector(".js-humidity");
   humidity.textContent = `${processedData.humidity}%`;
+
+  // visibility block
+  const visibility = document.querySelector(".js-visibility");
+  visibility.textContent = `${processedData.visibility} km`;
 }
 
 function addWeatherIcon(data) {
  const iconsSources = { "clear-day": "https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/SVG/1st%20Set%20-%20Color/clear-day.svg", "clear-night": "https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/SVG/1st%20Set%20-%20Color/clear-night.svg", rain: "https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/SVG/1st%20Set%20-%20Color/rain.svg", cloudy: "https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/SVG/1st%20Set%20-%20Color/cloudy.svg", snow: "https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/SVG/1st%20Set%20-%20Color/snow.svg", fog: "https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/SVG/1st%20Set%20-%20Color/fog.svg", wind: "https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/SVG/1st%20Set%20-%20Color/wind.svg", "partly-cloudy-day": "https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/SVG/1st%20Set%20-%20Color/partly-cloudy-day.svg", "partly-cloudy-night": "https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/SVG/1st%20Set%20-%20Color/partly-cloudy-night.svg" };
 
   const iconName = data.icon;
-  console.log(iconName);
+  // console.log(iconName);
   const getIconSrc = () => iconsSources[iconName];
   // const icon = document.createElement("img");
   // icon.src = getIconSrc()
