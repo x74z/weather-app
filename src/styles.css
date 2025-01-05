@@ -1,42 +1,112 @@
 /* 1. Use a more-intuitive box-sizing model */ *, *::before, *::after { box-sizing: border-box; } /* 2. Remove default margin */ * { margin: 0; } body { /* 3. Add accessible line-height */ line-height: 1.5; /* 4. Improve text rendering */ -webkit-font-smoothing: antialiased; } /* 5. Improve media defaults */ img, picture, video, canvas, svg { display: block; max-width: 100%; } /* 6. Inherit fonts for form controls */ input, button, textarea, select { font: inherit; } /* 7. Avoid text overflows */ p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; } /* 8. Improve line wrapping */ p { text-wrap: pretty; } h1, h2, h3, h4, h5, h6 { text-wrap: balance; } /* 9. Create a root stacking context */ #root, #__next { isolation: isolate; }
-
-body{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  /* background-color: black; */
-  /* color: white; */
+body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.8rem;
+  background-size: cover;
 }
-#content{
+
+/* All of the body classes for the background image */
+/* The weather div variable is so that the text remains readable with the background images */
+.body--clear-day {
+  background-image: url("https://wallpapercave.com/wp/2khKQyP.jpg");
+}
+
+.body--clear-night {
+  background-image: url("https://images.pexels.com/photos/2885320/pexels-photo-2885320.jpeg?cs=srgb&dl=a-clear-sky-at-night-2885320.jpg&fm=jpg");
+  --weather-div-background-color-rgb: 0, 0, 0;
+  color: white;
+}
+
+.body--rain {
+  background-image: url("http://kunal24borah.files.wordpress.com/2013/10/rain.jpg");
+  --weather-div-background-color-rgb: 0, 0, 0;
+  color: white;
+}
+
+.body--cloudy {
+  background-image: url("https://images.freeimages.com/images/large-previews/294/partly-cloudy-1173077.jpg");
+  --weather-div-background-color-rgb: 0, 0, 0;
+  color: white;
+}
+
+.body--snow {
+  background-image: url("https://c.pxhere.com/photos/84/59/snow_mountain_winter_landscape_evergreen_frost_north_day-655199.jpg!d");
+  --weather-div-background-color-rgb: 255, 255, 255;
+}
+
+.body--cloudy {
+  background-image: url("https://www.wonderworksonline.com/wp-content/uploads/1970/01/Wind.jpg");
+}
+
+.body--partly-cloudy-day {
+  background-image: url("https://english.wafa.ps/image/NewsThumbImg/Default/d5a2271e-bc63-444a-9125-e94e6a6cbf04.jpeg");
+}
+
+.body--partly-cloudy-night {
+  background-image: url("http://fc07.deviantart.net/fs6/i/2005/022/f/a/Partly_Cloudy_Night_by_Pileus.jpg");
+  --weather-div-background-color-rgb: 20, 2, 20;
+  color: white;
+}
+
+#content {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap:20px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
-  
 }
-.form{
-  input{
+
+.form {
+  input {
     border-radius: 10px;
     border: 1px solid black;
   }
-  button{
+
+  button {
     background-color: snow;
     border-radius: 10px;
     border: 1px solid black;
   }
 }
-.weather{
+
+.weather {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   justify-items: center;
   gap: 5px;
-  div{
+
+  div {
+    width: 100%;
     border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(var(--weather-div-background-color-rgb), 0.3);
+
   }
 }
-.weather__conditions{
+
+.weather__conditions {
   grid-column-start: 1;
   grid-column-end: 3;
-}
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 10px;
+  justify-items: center;
 
+  .weather__temp,
+  .weather__condition,
+  .weather__feelslike{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  img {
+    width: 69%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
