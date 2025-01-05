@@ -29,14 +29,23 @@ export function proccessWeatherDataForDate(data) {
   console.log(currentData);
   return currentData;
 }
-function formatLocationForUrl(location){
-  return location.replaceAll(' ', '%20');
+function formatLocationForUrl(location) {
+  return location.replaceAll(" ", "%20");
 }
 export async function getWeatherDataJson(locationInput) {
-  const location = formatLocationForUrl(locationInput);
-  const responseData = await fetch( `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=${getE()}&contentType=json`);
-  const dataInJson = await responseData.json();
+  if (locationInput.trim() === '') {
+    throw new Error(`Do not enter space`);
+  } 
 
-  console.log(dataInJson);
-  return dataInJson;
+  try {
+    const location = formatLocationForUrl(locationInput);
+    const responseData = await fetch( `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=${getE()}&contentType=json`);
+    const dataInJson = await responseData.json();
+
+    console.log(dataInJson);
+    return dataInJson;
+
+  } catch (error) {
+    throw new Error(error.message);
+  }
 }
