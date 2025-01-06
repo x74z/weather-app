@@ -53,6 +53,9 @@ export function addDataToDom(processedData) {
   // visibility block
   const visibility = document.querySelector(".js-visibility");
   visibility.textContent = `${processedData.visibility} km`;
+
+  // This removes the weather--invisible class, the point of that class is to not show the titles before searching the weather
+  document.querySelector(".weather").classList.remove("weather--invisible");
 }
 
 function addWeatherIcon(data) {
