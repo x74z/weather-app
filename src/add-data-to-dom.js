@@ -30,7 +30,7 @@ export function addDataToDom(processedData) {
 
   // Precipitation block
   const precip = document.querySelector(".js-precipitation");
-  precip.textContent = processedData.precip;
+  precip.textContent = `${processedData.precip}mm`;
 
   // Wind speed block
   const windSpeed = document.querySelector(".js-wind-speed");
